@@ -6,7 +6,7 @@
 
 <a href="https://github.com/Evg-qwerty/Patterns/blob/master/Singleton/singleton_1.php">Singleton</a> - пример
 
-##Factory
+## Factory
 
 <a href="https://github.com/Evg-qwerty/Patterns/tree/master/Factory">Factory</a>  - занимается распределением входящих объектов в соответствии с заданными условиями по классам выполняющим определенные операции с этими объектами. 
 
@@ -18,5 +18,10 @@
 
 <a href="https://github.com/Evg-qwerty/Patterns/tree/master/Registry">Registry</a> - Класс хранит в закрытой переменной массив из заданных пользователем ключей и значейний. Взаимодействовать с этим массивом можно только через методы предусмотренные в данном классе. Принцип напоминает Singleton но манипуляции происходят не с одиночной переменной а с массивом и множества ключей и значений.
 
-<a href="https://github.com/Evg-qwerty/Patterns/blob/master/Registry/Registry.php">Registry.php</a>
+Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/Registry/Registry.php">Registry.php</a> 
 
+## ObjectPool
+
+<a href="">ObjectPool</a> - по сути тот же риестр только в приватном свойстве класса хранятся не пары - "ключ"=>"значение", а объекты образованные  отдельным классом.
+
+Пример <a href="">ObjectPool.php</a> 
