@@ -22,6 +22,6 @@
 
 ## ObjectPool
 
-<a href="">ObjectPool</a> - по сути тот же риестр только в приватном свойстве класса хранятся не пары - "ключ"=>"значение", а объекты образованные  отдельным классом.
+<a href="https://github.com/Evg-qwerty/Patterns/tree/master/ObjectPool">ObjectPool</a> - по сути тот же риестр только в приватном свойстве класса хранятся не пары - "ключ"=>"значение", а объекты образованные  отдельным классом.
 
-Пример <a href="">ObjectPool.php</a> 
+Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/ObjectPool/ObjectPool.php">ObjectPool.php</a> 
