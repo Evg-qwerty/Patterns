@@ -13,3 +13,10 @@
 <a href="https://github.com/Evg-qwerty/Patterns/blob/master/Factory/SimpleFactory_1.php">SimpleFactory_1</a> - Моя реализация с подробными комментариями в ветке мастер. Фвбрика превращает массивы в объекты сортируя их по значению ’title’ и “присваивает” им соответствующее имя 'Good site' или 'Bad site'. 
 
 <a href="https://github.com/Evg-qwerty/Patterns/blob/master/Factory/SimpleFactory_2.php">SimpleFactory_2</a> - пример с интернетов, возможно там понятнее.
+
+## Registry
+
+<a href="">Registry</a> - Класс хранит в закрытой переменной массив из заданных пользователем ключей и значейний. Взаимодействовать с этим массивом можно только через методы предусмотренные в данном классе. Принцип напоминает Singleton но манипуляции происходят не с одиночной переменной а с массивом и множества ключей и значений.
+
+<a href="">Registry.php</a>
+
