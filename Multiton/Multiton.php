@@ -1,147 +1,138 @@
 <?php
-/**
- * General multiton abstract class
- *
- * @package Patterns
+/*
+ * Прототип будущего синглтона
  */
-abstract class FactoryAbstract
+abstract class PoolAbstract
 {
-
-	/**
-	 * @var array
-	 */
-	protected static $instances = array();
-
-
-	/**
-	 * Returns singleton
+	protected static $singleton = array();
+	/*
 	 *
-	 * @return static
 	 */
-	public static function getInstance()
+	public static function getSingleton()
 	{
+		/*
+		 * Все происходит в классе синглтон унаследовавшем все методы PoolAbstract
+		 * Класс getClassName() воззврашает имя класса в котором его вызвали (т.е.)
+		 * имя текущего абстрактного класса. Далее происходит проверка на его наличие
+		 * в массиве $singleton, при первом вызове он пустой, в этом случае в массив
+		 * записывается экземпляр синглетона со всеми его свойствами и методами,
+		 * если они там будут, в данном случае там только масcив 'x' к которому
+		 * мы можем получить доступ через вызвов Singleton1::getSingleton()->x
+		 */
 		$className = static::getClassName();
-		if (!isset(self::$instances[$className])) {
-			self::$instances[$className] = new $className();
+		if ( !isset(self::$singleton[$className]) ) {
+			self::$singleton[$className] = new $className();
 		}
-		return self::$instances[$className];
+		return self::$singleton[$className];
 	}
 
-	/**
-	 * Removes singleton
-	 *
-	 * @return void
+	/*
+	 * Удаляет синглтон если он есть
 	 */
-	public static function removeInstance()
+	public static function removeSingleton()
 	{
 		$className = static::getClassName();
-		if (isset(self::$instances[$className])) {
-			unset(self::$instances[$className]);
+		if ( isset(self::$singleton[$className]) ) {
+			unset( self::$singleton[$className] );
 		}
 	}
 
-	/**
-	 * Returns singleton's name
-	 *
-	 * @return string
+	/*
+	 * Возвращает имя класса синглтона
 	 */
 	final protected static function getClassName()
 	{
 		return get_called_class();
 	}
 
-	/**
-	 * The constructor is disabled
+	/*
+	 * Исключаем магические методы
 	 */
-	protected function __construct()
+	final protected function __construct()
 	{
 	}
-
-	/**
-	 * Cloning is disabled
-	 */
 	final protected function __clone()
 	{
 	}
-
-	/**
-	 * Serialization is disabled
-	 */
 	final protected function __sleep()
 	{
 	}
-
-	/**
-	 * Unserialization is disabled
-	 */
 	final protected function __wakeup()
 	{
 	}
 }
 
-/**
- * Multiton abstract class
- *
- * @package Patterns
+/*
+ * Класс наследует методы класса PoolAbstract, а итоговый класс синглтона
+ * наследует этот класс Pool, со всеми методами и свойствами.
  */
-abstract class Factory extends FactoryAbstract
+abstract class Pool extends PoolAbstract
 {
 
-	/**
-	 * Returns singleton
-	 *
-	 * @return static
-	 */
-	final public static function getInstance()
+	final public static function getSingleton()
 	{
-		return parent::getInstance();
+		return parent::getSingleton();
 	}
 
-	/**
-	 * Removes singleton
-	 *
-	 * @return void
-	 */
-	final public static function removeInstance()
+	public final static function removeSingleton()
 	{
-		parent::removeInstance();
+		parent::removeSingleton();
 	}
 }
 
 /*
- * =====================================
- *           USING OF MULTITON
- * =====================================
+ * USE
  */
 
-/**
- * First singleton
- */
-class FirstProduct extends Factory
+// Синглтон1 Наследует методы  класса Pool
+class Singleton1 extends Pool
 {
-	public $a = array();
+	public $x = array();
 }
-
-/**
- * Second singleton
- */
-class SecondProduct extends FirstProduct
+// синглтон 2 Наследует свсйсства и методы Синглтон1
+class Singleton2 extends Singleton1
 {
 }
 
-// Filling property of singletons
-FirstProduct::getInstance()->a[] = 1;
-SecondProduct::getInstance()->a[] = 2;
-FirstProduct::getInstance()->a[] = 3;
-SecondProduct::getInstance()->a[] = 4;
+// записываем
+Singleton1::getSingleton()->x[] = 1;
+Singleton1::getSingleton()->x[] = 2;
 
+Singleton2::getSingleton()->x[] = 4;
+Singleton2::getSingleton()->x[] = 5;
 
+// вывод результатов
 echo '<pre>';
-print_r(FirstProduct::getInstance()->a);
-print_r(SecondProduct::getInstance()->a);
+var_dump(Singleton1::getSingleton()->x);
+var_dump(Singleton2::getSingleton()->x);
 echo '</pre>';
 
+// удаляем первый
+Singleton1::removeSingleton();
+echo "Один удалили...";
+// вывод результатов
+echo '<pre>';
+var_dump(Singleton1::getSingleton()->x);
+var_dump(Singleton2::getSingleton()->x);
+echo '</pre>';
 
-// array(1, 3)
-// array(2, 4)
+/*
+ * Result
 
+array (size=2)
+  0 => int 1
+  1 => int 2
+
+array (size=2)
+  0 => int 4
+  1 => int 5
+
+Один удалили...
+
+array (size=0)
+  empty
+
+array (size=2)
+  0 => int 4
+  1 => int 5
+*/
