@@ -48,6 +48,6 @@
 
 ## Builder
 
-<a href="">Prototype</a> используется для отделения процесса конструирования сложного объекта от его представления, так что в результате одного и того же конструирования могут получаться различные объекты.
+<a href="https://github.com/Evg-qwerty/Patterns/tree/master/Builder">Prototype</a> используется для отделения процесса конструирования сложного объекта от его представления, так что в результате одного и того же конструирования могут получаться различные объекты.
 
-Пример <a href="">Builder.php</a>
+Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/Builder/Builder.php">Builder.php</a>
