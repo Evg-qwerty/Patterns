@@ -5,13 +5,13 @@ class LazyURL
 	protected $_stringUrl;
 	protected $_domain;
 
-	// записываем значение $stringUrl в внутреннюю переменную $_stringUrl
+	// (2) записываем значение $stringUrl в внутреннюю переменную $_stringUrl
 	public function __construct($stringUrl)
 	{
 		$this->_stringUrl = $stringUrl;
 	}
 	/*
-	 * проверяем $_stringUrl = если оно не пустое то совершаем в его содержимым
+	 * (4) проверяем $_stringUrl = если оно не пустое то совершаем в его содержимым
 	 * какие-то действия, это и есть "отложеная инициализация". В примере разбор
 	 * url происходит только в момент вызвова getDomain(), а в момент вызова
 	 * LazyURL происходит только подготовка.
