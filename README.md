@@ -45,3 +45,9 @@
 <a href="https://github.com/Evg-qwerty/Patterns/tree/master/Prototype">Prototype</a> удобно использовать для создания независимых копий объектов.
 
 Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/Prototype/Prototype.php">Prototype.php</a>
+
+## Builder
+
+<a href="">Prototype</a> используется для отделения процесса конструирования сложного объекта от его представления, так что в результате одного и того же конструирования могут получаться различные объекты.
+
+Пример <a href="">Builder.php</a>
