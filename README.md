@@ -40,7 +40,7 @@
 
 Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/LazyInitialization/LazyInitialization.php">AbstractFactory.php</a>
 
-#### Prototype
+## Prototype
   
 <a href="https://github.com/Evg-qwerty/Patterns/tree/master/Prototype">Prototype</a> удобно использовать для создания независимых копий объектов.
 
