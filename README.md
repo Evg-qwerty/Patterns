@@ -25,3 +25,11 @@
 <a href="https://github.com/Evg-qwerty/Patterns/tree/master/ObjectPool">ObjectPool</a> - по сути тот же риестр только в приватном свойстве класса хранятся не пары - "ключ"=>"значение", а объекты образованные  отдельным классом.
 
 Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/ObjectPool/ObjectPool.php">ObjectPool.php</a>
+
+
+
+## AbstractFactory
+
+<a href="https://github.com/Evg-qwerty/Patterns/tree/master/AbstractFactory">AbstractFactory</a> в отличии от простой фабрики в шаблоне Абстрактная фабрика присутсвует несколько фабрик. Сам класс абстрактной фабрики просто занимается сотрировкой продукта между простыми фабриками которые уже что-то с ним делают. В примере нужный класс выбирается в зависимости от значения конфига, в реальности критерии выбора могут быть другими.
+
+Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/AbstractFactory/AbstractFactory.php">AbstractFactory.php</a>
