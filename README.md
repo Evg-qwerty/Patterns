@@ -10,7 +10,7 @@
 
 <a href="https://github.com/Evg-qwerty/Patterns/tree/master/Factory">Factory</a>  - занимается распределением входящих объектов в соответствии с заданными условиями по классам выполняющим определенные операции с этими объектами. 
 
-<a href="https://github.com/Evg-qwerty/Patterns/blob/master/Factory/SimpleFactory_1.php">SimpleFactory_1</a> - Моя реализация с подробными комментариями в ветке мастер. Фвбрика превращает массивы в объекты сортируя их по значению ’title’ и “присваивает” им соответствующее имя 'Good site' или 'Bad site'. 
+<a href="https://github.com/Evg-qwerty/Patterns/blob/master/Factory/SimpleFactory_1.php">SimpleFactory_1</a> - Моя реализация с подробными комментариями. Фвбрика превращает массивы в объекты сортируя их по значению ’title’ и “присваивает” им соответствующее имя 'Good site' или 'Bad site'. 
 
 <a href="https://github.com/Evg-qwerty/Patterns/blob/master/Factory/SimpleFactory_2.php">SimpleFactory_2</a> - пример с интернетов, возможно там понятнее.
 
