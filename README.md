@@ -33,3 +33,10 @@
 <a href="https://github.com/Evg-qwerty/Patterns/tree/master/AbstractFactory">AbstractFactory</a> в отличии от простой фабрики в шаблоне Абстрактная фабрика присутсвует несколько фабрик. Сам класс абстрактной фабрики просто занимается сотрировкой продукта между простыми фабриками которые уже что-то с ним делают. В примере нужный класс выбирается в зависимости от значения конфига, в реальности критерии выбора могут быть другими.
 
 Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/AbstractFactory/AbstractFactory.php">AbstractFactory.php</a>
+
+## Lazy Initialization
+
+<a href="https://github.com/Evg-qwerty/Patterns/tree/master/LazyInitialization">Lazy Initialization</a> - нужна для управлением работой ресурсоемких задач. В примере разбор url ("ресурсоемкая задача":) происходит только в момент вызвова getDomain(), а в момент вызова LazyURL происходит только подготовка.
+
+Пример <a href="https://github.com/Evg-qwerty/Patterns/blob/master/LazyInitialization/LazyInitialization.php">AbstractFactory.php</a>
+
